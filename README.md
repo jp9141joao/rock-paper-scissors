@@ -1,81 +1,98 @@
-# Pedra, Papel, Tesoura
-## Descrição
+# **Rock, Paper, Scissors**
 
-Este é um jogo simples de **Pedra, Papel e Tesoura** em que o jogador compete contra o computador. O objetivo é escolher entre Pedra, Papel ou Tesoura e tentar vencer o adversário. O jogo mantém um placar e permite que o jogador continue jogando até decidir sair.
+## Description
 
-## Funcionalidades
+This is a simple **Rock, Paper, Scissors** game where the player competes against the computer. The goal is to choose between Rock, Paper, or Scissors and try to beat the opponent. The game keeps score and allows the player to keep playing until they decide to quit.
 
-- **Escolha do Jogador**: O jogador escolhe entre Pedra, Papel ou Tesoura.
-- **Escolha do Computador**: O computador escolhe aleatoriamente entre Pedra, Papel ou Tesoura.
-- **Placar**: O jogo mantém o placar de vitórias do jogador e do adversário.
-- **Validação de Entrada**: O jogo valida as escolhas do jogador e garante que apenas as opções válidas sejam aceitas.
-- **Reinício ou Saída**: O jogador pode optar por continuar jogando ou sair a qualquer momento.
+---
 
-## Como Jogar
+## Features
 
-1. **Iniciar o Jogo**: Ao iniciar o jogo, o jogador deve escolher entre Pedra, Papel ou Tesoura digitando o número correspondente:
-    - **1** para Pedra
-    - **2** para Papel
-    - **3** para Tesoura
-2. O computador escolhe aleatoriamente uma das opções.
-3. O jogo compara as escolhas:
-    - Pedra vence Tesoura.
-    - Tesoura vence Papel.
-    - Papel vence Pedra.
-4. O placar é atualizado após cada rodada.
-5. O jogador pode continuar jogando ou sair a qualquer momento.
+* **Player's Choice**: The player selects between Rock, Paper, or Scissors.
+* **Computer's Choice**: The computer randomly selects between Rock, Paper, or Scissors.
+* **Scoreboard**: The game keeps track of the player's and the opponent's victories.
+* **Input Validation**: The game validates player input and ensures only valid options are accepted.
+* **Restart or Quit**: The player can choose to continue playing or quit at any time.
 
-## Como Usar
+---
 
-1. Clone ou baixe o código do repositório.
-2. Execute o script Python.
-3. Siga as instruções no terminal para jogar.
+## How to Play
 
-## Exemplo de Uso
+1. **Start the Game**: When the game starts, the player must choose between Rock, Paper, or Scissors by typing the corresponding number:
+
+   * **1** for Rock
+   * **2** for Paper
+   * **3** for Scissors
+2. The computer randomly selects one of the options.
+3. The game compares the choices:
+
+   * Rock beats Scissors.
+   * Scissors beats Paper.
+   * Paper beats Rock.
+4. The scoreboard is updated after each round.
+5. The player can continue playing or quit at any time.
+
+---
+
+## How to Use
+
+1. Clone or download the code from the repository.
+2. Run the Python script.
+3. Follow the instructions in the terminal to play.
+
+---
+
+## Example of Use
 
 ```bash
 * Menu *
-1- Começar
-2- Sair
+1- Start
+2- Quit
 R: 1
 
-* Placar *
-Você: 0
-Adversario: 0
+* Score *
+You: 0
+Opponent: 0
 
-* Escolha *
-1- Pedra
-2- Papel
-3- Tesoura
+* Choice *
+1- Rock
+2- Paper
+3- Scissors
 R: 1
 
-Adversario escolheu Tesoura!
-Você ganhou!
+Opponent chose Scissors!
+You won!
 
-Digite "1" para voltar
+Type "1" to go back
 R: 1
 
 * Menu *
-1- Começar
-2- Sair
+1- Start
+2- Quit
 R: 2
 
-Programa finalizado!
+Program terminated!
 ```
 
-## Requisitos
+---
 
-- Python 3.x
-- Biblioteca `random` (incluída no Python por padrão)
+## Requirements
 
-## Como Rodar o Código
+* Python 3.x
+* `random` library (included by default in Python)
 
-1. **Clone ou baixe o projeto**:
-    ```bash
-    git clone <link-do-repositório>
-    ```
+---
 
-2. **Execute o script**:
-    ```bash
-    python pedra_papel_tesoura.py
-    ```
+## How to Run the Code
+
+1. **Clone or download the project**:
+
+   ```bash
+   git clone <repository-link>
+   ```
+
+2. **Run the script**:
+
+   ```bash
+   python rock_paper_scissors.py
+   ```
