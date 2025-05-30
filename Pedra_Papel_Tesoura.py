@@ -1,61 +1,78 @@
-import random
-import os
-import time
+# Import libraries
+import random   # To allow the computer to make random choices
+import os       # To clear the terminal screen
+import time     # To add delays for better user experience
 
-def Iniciar(Placar):
+# Define the main game function
+def Start(Score):
+    # Clear the terminal screen
     os.system('cls')
-    Escolha = int(input(f'\n* Placar *\nVocê: {Placar[0]}\nAdversario: {Placar[1]}\n\n* Escolha *\n1- Pedra\n2- Papel\n3- Tesoura\nR: '))
-    while Escolha < 1 and Escolha > 3:
-        Escolha = int(input(f'\n* Placar *\nVocê: {Placar[0]}\nAdversario: {Placar[1]}\n\n*Escolha invalida! *\n1- Pedra\n2- Papel\n3- Tesoura\nR: '))
 
-    Adversario = random.randint(1,3)
+    # Prompt the player for their choice and display the current score
+    Choice = int(input(f'\n* Score *\nYou: {Score[0]}\nOpponent: {Score[1]}\n\n* Choose *\n1- Rock\n2- Paper\n3- Scissors\nR: '))
+    
+    # Validate the input to ensure it is between 1 and 3
+    while Choice < 1 or Choice > 3:
+        Choice = int(input(f'\n* Score *\nYou: {Score[0]}\nOpponent: {Score[1]}\n\n* Invalid choice! *\n1- Rock\n2- Paper\n3- Scissors\nR: '))
 
-    if Adversario == 1:
-        Resp = 'Pedra'
-    elif Adversario == 2:
-        Resp = 'Papel'
+    # Computer randomly selects Rock, Paper, or Scissors
+    Opponent = random.randint(1, 3)
+
+    # Map the numeric choice to string for display
+    if Opponent == 1:
+        Response = 'Rock'
+    elif Opponent == 2:
+        Response = 'Paper'
     else:
-        Resp = 'Tesoura'
+        Response = 'Scissors'
 
-    print(f'\nAdversario escolheu {Resp}!')
-    time.sleep(2)
+    print(f'\nOpponent chose {Response}!')
+    time.sleep(2)  # Delay for suspense
 
-    if Escolha == Adversario:
-        print('\nJogo empatado!')
-    elif Escolha == 1 and Adversario == 2:
-        print('\nVocê perdeu!')
-        Placar[1] += 1 
-    elif Escolha == 1 and Adversario ==  3:
-        print('\nVocê ganhou!')
-        Placar[0] += 1 
-    elif Escolha == 2 and Adversario == 1:
-        print('\nVocê ganhou!')
-        Placar[0] += 1 
-    elif Escolha == 2 and Adversario == 3:
-        print('\nVocê perdeu!')
-        Placar[1] += 1 
-    elif Escolha == 3 and Adversario == 1:
-        print('\nVocê perdeu!')
-        Placar[1] += 1 
-    elif Escolha == 3 and Adversario == 2:
-        print('\nVocê ganhou!')
-        Placar[0] += 1 
+    # Determine the outcome of the game
+    if Choice == Opponent:
+        print('\nIt\'s a tie!')
+    elif Choice == 1 and Opponent == 2:
+        print('\nYou lost!')
+        Score[1] += 1  # Increment opponent's score
+    elif Choice == 1 and Opponent == 3:
+        print('\nYou won!')
+        Score[0] += 1  # Increment player's score
+    elif Choice == 2 and Opponent == 1:
+        print('\nYou won!')
+        Score[0] += 1
+    elif Choice == 2 and Opponent == 3:
+        print('\nYou lost!')
+        Score[1] += 1
+    elif Choice == 3 and Opponent == 1:
+        print('\nYou lost!')
+        Score[1] += 1
+    elif Choice == 3 and Opponent == 2:
+        print('\nYou won!')
+        Score[0] += 1
 
-    Voltar = int(input('\nDigite "1" para voltar\nR: '))
-    while Voltar != 1:
-        Voltar = int(input('\nOpção invalida!\nDigite "1" para voltar\nR: '))
+    # Allow player to return to menu
+    Back = int(input('\nType "1" to return\nR: '))
+    while Back != 1:
+        Back = int(input('\nInvalid option!\nType "1" to return\nR: '))
 
-Placar = [0,0]
+# Initialize the score: [player, opponent]
+Score = [0, 0]
 
+# Main game loop
 while True:
-    os.system('cls')
+    os.system('cls')  # Clear the screen
 
-    Menu = int(input(f'\n* Placar *\nVocê: {Placar[0]}\nAdversario: {Placar[1]}\n\n* Menu *\n1- Começar\n2- Sair\nR: '))
+    # Display menu and prompt for choice
+    Menu = int(input(f'\n* Score *\nYou: {Score[0]}\nOpponent: {Score[1]}\n\n* Menu *\n1- Start\n2- Quit\nR: '))
+    
+    # Validate menu input
     while Menu != 1 and Menu != 2:
-        Menu = int(input('\n* Menu *\nOpção invalida!\n1- Começar\n2- Sair\nR: '))
+        Menu = int(input('\n* Menu *\nInvalid option!\n1- Start\n2- Quit\nR: '))
 
+    # Start game or quit
     if Menu == 1:
-        Iniciar(Placar)
+        Start(Score)
     else:
-        print('\nPrograma finaliado!')
+        print('\nProgram terminated!')
         break
