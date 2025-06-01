@@ -88,7 +88,7 @@ Program terminated!
 1. **Clone or download the project**:
 
    ```bash
-   git clone <repository-link>
+   git clone https://github.com/jp9141joao/rock-paper-scissors
    ```
 
 2. **Run the script**:
